@@ -3,7 +3,7 @@ using Domain.Validation;
 
 namespace Domain.Entity;
 
-public class Task : Base {
+public class TodoTask : Base {
     public string Name { get; set; }
     public string Code { get; set; }
     public string? SubName { get; set; }
@@ -11,7 +11,7 @@ public class Task : Base {
     private int PercentageCompleted { get; set; } = 0;
 
 
-    public Task(string name, string? subName, int percentageCompleted) {
+    public TodoTask(string name, string? subName, int percentageCompleted) {
         ValidateDomain(name);
         Name = name;
         SubName = subName;

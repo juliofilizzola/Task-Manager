@@ -4,3 +4,55 @@
     build:
       context: .
       dockerfile: Task-Manager/Dockerfile
+
+  infra.data:
+    image: infra.data
+    build:
+      context: .
+      dockerfile: Infra.Data/Dockerfile
+
+  domain:
+    image: domain
+    build:
+      context: .
+      dockerfile: Domain/Dockerfile
+
+  domain-1:
+    image: domain-1
+    build:
+      context: .
+      dockerfile: Domain/Dockerfile
+
+  mongodb:
+    image: mongo:latest # Usa a imagem oficial do MongoDB
+    container_name: mongo-container # Nome do container
+    restart: always # Reinicia o container automaticamente se ele falhar
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin # Define o usuário root
+      MONGO_INITDB_ROOT_PASSWORD: admin123 # Define a senha do usuário root
+    ports:
+      - "27017:27017" # Mapeia a porta 27017 do host para a porta 27017 do container
+    volumes:
+      - mongo-data:/data/db # Define um volume para persistência dos dados
+
+  mongo-express:
+    image: mongo-express:latest # Usa a imagem oficial do Mongo Express
+    container_name: mongo-express-container # Nome do container
+    restart: always # Reinicia o container automaticamente se ele falhar
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin # Usuário admin do MongoDB
+      ME_CONFIG_MONGODB_ADMINPASSWORD: admin123 # Senha do usuário admin do MongoDB
+      ME_CONFIG_MONGODB_SERVER: mongodb # Nome do serviço do MongoDB
+    ports:
+      - "8081:8081" # Mapeia a porta 8081 do host para a porta 8081 do container
+    depends_on:
+      - mongodb # Define a dependência do serviço MongoDB
+
+volumes:
+  mongo-data:
+    driver: local # Usa o driver de volume local
+  infra.ioc:
+    image: infra.ioc
+    build:
+      context: .
+      dockerfile: Infra.IoC/Dockerfile

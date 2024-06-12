@@ -17,30 +17,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb8d37a6-8bcc-43b9-a922-7e5b97074690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Infra.Data/Context/ApplicationDbContextFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra.Data/EntitiesConfiguration/TodoTaskConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra.Data/Infra.data.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra.IoC/Class1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/WebApplication1.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entity/TodoTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entity/TodoTask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.Data/Context/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra.Data/Context/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.Data/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.Data/Infra.Data.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.Data/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.Data/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.Data/Worker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.Data/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication1/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.Data/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.IoC/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra.IoC/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.IoC/Infra.IoC.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infra.IoC/Infra.IoC.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.IoC/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task-Manager.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Task-Manager.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task-Manager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task-Manager/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task-Manager/Task-Manager.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Task-Manager/Task-Manager.csproj" afterDir="false" />
+    <list default="true" id="eb8d37a6-8bcc-43b9-a922-7e5b97074690" name="Changes" comment="Remove folders">
+      <change beforePath="$PROJECT_DIR$/Infra-data/Context/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra.Data/Context/ApplicationContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infra-data/Infra-data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infra.Data/Infra.Data.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +49,10 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="Infra-data" />
+                    <option name="lastUsedInstant" value="1718218499" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="Domain" />
                     <option name="lastUsedInstant" value="1718048977" />
                   </RecentBranch>
@@ -93,20 +76,23 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Infra.IoC/DependencyInjection.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Infra.data/Context/ApplicationDbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Infra.data/EntitiesConfiguration/TodoTaskConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/julio.stanik/Documents/dev/Task-Manager/Domain/Entity/TodoTask.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infra.Data/Context/ApplicationContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2hh1RAZdSMCOf4imLWaja9G8pUf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -119,7 +105,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Docker.docker-compose.yml.mongodb: Compose Deployment.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Domain",
+    "git-widget-placeholder": "Infra-data",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -444,7 +430,63 @@
       <option name="project" value="LOCAL" />
       <updated>1718051473705</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="create solution Infra-data">
+      <option name="closed" value="true" />
+      <created>1718218539694</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718218539694</updated>
+    </task>
+    <task id="LOCAL-00005" summary="remove class file">
+      <option name="closed" value="true" />
+      <created>1718218966467</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718218966467</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add dependencies from entity framework and postgresql">
+      <option name="closed" value="true" />
+      <created>1718218996055</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718218996055</updated>
+    </task>
+    <task id="LOCAL-00007" summary="create context application">
+      <option name="closed" value="true" />
+      <created>1718219009295</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718219009295</updated>
+    </task>
+    <task id="LOCAL-00008" summary="remove docker compose">
+      <option name="closed" value="true" />
+      <created>1718219310121</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718219310121</updated>
+    </task>
+    <task id="LOCAL-00009" summary="remove docker compose">
+      <option name="closed" value="true" />
+      <created>1718219347765</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718219347765</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Remove folders">
+      <option name="closed" value="true" />
+      <created>1718219393301</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1718219393301</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,6 +500,12 @@
     <MESSAGE value="create Domain" />
     <MESSAGE value="Create Interface domain todo Task" />
     <MESSAGE value="Rename Todo Task" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename Todo Task" />
+    <MESSAGE value="create solution Infra-data" />
+    <MESSAGE value="remove class file" />
+    <MESSAGE value="add dependencies from entity framework and postgresql" />
+    <MESSAGE value="create context application" />
+    <MESSAGE value="remove docker compose" />
+    <MESSAGE value="Remove folders" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove folders" />
   </component>
 </project>

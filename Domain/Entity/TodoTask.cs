@@ -8,9 +8,7 @@ public class TodoTask : Base {
     public string Code { get; set; }
     public string? SubName { get; set; }
     public bool IsComplete { get; set; } = false;
-    private int PercentageCompleted { get; set; } = 0;
-
-
+    public int PercentageCompleted { get; set; } = 0;
     public TodoTask(string name, string? subName, int percentageCompleted) {
         ValidateDomain(name);
         Name = name;

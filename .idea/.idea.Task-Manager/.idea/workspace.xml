@@ -21,21 +21,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb8d37a6-8bcc-43b9-a922-7e5b97074690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Mappings/DomainToDtoMappingProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra.IoC/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infra.IoC/Infra.IoC.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Controllers/TodoTaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Controllers/TodoTaskController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Dto/TodoTaskDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Dto/TodoTaskDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Interface/ITodoTaskServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Interface/ITodoTaskServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Services/TodoTaskServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/TodoTaskServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entity/TodoTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entity/TodoTask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Interfaces/ITaskRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Interfaces/ITodoTaskRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Utils/Ramdom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Utils/Random.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra.Data/Repository/TodoTaskRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra.Data/Repository/TodoTaskRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task-Manager.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Task-Manager.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,34 +107,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Application: https.executor": "Debug",
-    ".NET Launch Settings Profile.Task-Manager: http.executor": "Run",
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Docker.docker-compose.yml.db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.mongodb: Compose Deployment.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Infra-data",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Application: https.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.Task-Manager: http.executor&quot;: &quot;Run&quot;,
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Docker.docker-compose.yml.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.mongodb: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Infra-data&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "rider.external.source.directories": [
-      "C:\\Users\\julio.stanik\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\julio.stanik\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\julio.stanik\\AppData\\Local\\Symbols\\src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\julio.stanik\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\julio.stanik\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\julio.stanik\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Application: https">
     <configuration name="ConsoleApp1" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -512,7 +500,7 @@
       <workItem from="1718211750606" duration="144000" />
       <workItem from="1718211900907" duration="5447000" />
       <workItem from="1718271562484" duration="5427000" />
-      <workItem from="1718294469228" duration="8193000" />
+      <workItem from="1718294469228" duration="8858000" />
     </task>
     <task id="LOCAL-00001" summary="create Domain">
       <option name="closed" value="true" />
@@ -682,7 +670,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718296995423</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="config">
+      <option name="closed" value="true" />
+      <created>1718302840766</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1718302840766</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -711,6 +707,7 @@
     <MESSAGE value="modify TodoTask" />
     <MESSAGE value="add application" />
     <MESSAGE value="modify Context and create taskRepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify Context and create taskRepository" />
+    <MESSAGE value="config" />
+    <option name="LAST_COMMIT_MESSAGE" value="config" />
   </component>
 </project>

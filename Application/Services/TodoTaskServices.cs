@@ -37,9 +37,16 @@ public class TodoTaskServices : ITodoTaskServices {
         return todoTaskDto;
     }
 
-    public async Task<TodoTaskDto> Update(TodoTaskDto todoTaskDto) {
+    public async Task<TodoTaskDto> Update(TodoTaskDto todoTaskDto, string id) {
+        var todo     = await GetTodoTasksByID(id);
+        if (todo == null){
+            throw new Exception();
+        }
+        Console.WriteLine(todoTaskDto.ToString());
+
         var todoTask = _mapper.Map<TodoTask>(todoTaskDto);
-        await _repo.UpdateAsync(todoTask);
+        // todo[todoTaskDto.] = todoTaskDto
+        // await _repo.UpdateAsync(todoTask);
         return todoTaskDto;
     }
 

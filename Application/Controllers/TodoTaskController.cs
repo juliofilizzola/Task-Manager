@@ -28,4 +28,9 @@ public class TodoTaskController : ControllerBase {
     public async Task<ActionResult> Create([FromBody] TodoTaskDto todoTaskDto) {
         return Ok(await _todoTaskServices.Add(todoTaskDto));
     }
+
+    [HttpPatch("{id}")]
+    public async Task<ActionResult> Update([FromBody] TodoTaskDto todoTaskDto, string id) {
+        return Ok(await _todoTaskServices.Update(todoTaskDto, id));
+    }
 }

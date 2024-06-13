@@ -9,7 +9,7 @@ public class TodoTask : Base {
     public string? SubName { get; set; }
     public bool IsComplete { get; set; } = false;
     public int PercentageCompleted { get; set; } = 0;
-    public TodoTask(string name, string? subName, int percentageCompleted) {
+    public TodoTask(string name, int percentageCompleted, string? subName) {
         ValidateDomain(name);
         Name = name;
         SubName = subName;
@@ -20,7 +20,7 @@ public class TodoTask : Base {
         }
     }
 
-    public void Update(string name, string code, string? subName, int percentageCompleted) {
+    public void Update(string name, string code, int percentageCompleted, string? subName) {
         ValidateDomain(name);
         Name = name;
         SubName = subName;

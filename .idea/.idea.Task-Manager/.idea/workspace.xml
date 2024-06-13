@@ -17,10 +17,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb8d37a6-8bcc-43b9-a922-7e5b97074690" name="Changes" comment="Remove folders">
-      <change beforePath="$PROJECT_DIR$/Infra-data/Context/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infra.Data/Context/ApplicationContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infra-data/Infra-data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infra.Data/Infra.Data.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="eb8d37a6-8bcc-43b9-a922-7e5b97074690" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +74,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/julio.stanik/Documents/dev/Task-Manager/Domain/Entity/TodoTask.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Infra.Data/Context/ApplicationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infra.Data/Context/ApplicationContext.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -486,7 +483,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718219393301</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Remove solution">
+      <option name="closed" value="true" />
+      <created>1718219729436</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718219729436</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,6 +511,7 @@
     <MESSAGE value="create context application" />
     <MESSAGE value="remove docker compose" />
     <MESSAGE value="Remove folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove folders" />
+    <MESSAGE value="Remove solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove solution" />
   </component>
 </project>

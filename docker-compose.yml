@@ -1,0 +1,18 @@
+﻿services:
+  application:
+    image: application
+    build:
+      context: .
+      dockerfile: Application/Dockerfile
+
+  db:
+    container_name: db_task_manager
+    image: postgres:latest # colocar a versâo do postgres
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: task_manager
+    tty: true
+    restart: always
+    ports:
+      - '5433:5432'

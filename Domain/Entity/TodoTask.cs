@@ -6,13 +6,14 @@ namespace Domain.Entity;
 public class TodoTask : Base {
     public string Name { get; set; }
     public string Code { get; set; }
-    public string? SubName { get; set; }
+    public string? Description { get; set; }
     public bool IsComplete { get; set; } = false;
     public int PercentageCompleted { get; set; } = 0;
-    public TodoTask(string name, int percentageCompleted, string? subName) {
+    public TodoTask( string name, int percentageCompleted, string? description) {
         ValidateDomain(name);
+        Id = Ramdom.RandomStringCode(34);
         Name = name;
-        SubName = subName;
+        Description = description;
         PercentageCompleted = ValidatePercentage(percentage: percentageCompleted);
         Code = Ramdom.RandomStringCode(6);
         if (PercentageCompleted == 100){
@@ -20,10 +21,10 @@ public class TodoTask : Base {
         }
     }
 
-    public void Update(string name, string code, int percentageCompleted, string? subName) {
+    public void Update(string name, string code, int percentageCompleted, string? description) {
         ValidateDomain(name);
         Name = name;
-        SubName = subName;
+        Description = description;
         Code = code;
         PercentageCompleted = percentageCompleted;
     }

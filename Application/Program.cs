@@ -1,7 +1,10 @@
-using Application.Dto;
 using Application.Interface;
+using Application.Mappings;
 using Application.Services;
+using Domain.Interfaces;
 using Infra.Data.Context;
+using Infra.Data.Repository;
+using Infra.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +15,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ITodoTaskServices, TodoTaskServices>();
-// builder.Services.AddScoped<ITodoTaskDto, >()
+builder.Services.AddScoped<ITodoTaskRepository, TodoTaskRepository>();
+builder.Services.AddAutoMapper(typeof(DomainToDtoMappingProfile));
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

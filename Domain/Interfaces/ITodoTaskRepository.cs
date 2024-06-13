@@ -2,9 +2,9 @@
 
 namespace Domain.Interfaces;
 
-public interface ITaskRepository {
+public interface ITodoTaskRepository {
     Task<IEnumerable<TodoTask>> GetTasksAsync();
-    Task<TodoTask> GetTaskByIdAsync(int? id);
+    Task<TodoTask> GetTaskByIdAsync(string? id);
     Task<TodoTask> CreateAsync(TodoTask todoTask);
     Task<TodoTask> UpdateAsync(TodoTask todoTask);
     Task<TodoTask> RemoveAsync(TodoTask todoTask);

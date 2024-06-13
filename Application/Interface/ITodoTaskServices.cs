@@ -3,9 +3,9 @@
 namespace Application.Interface;
 
 public interface ITodoTaskServices {
-    Task<IEnumerable<ITodoTaskDto>> GetTodoTask();
-    Task <ITodoTaskDto> GetTodoTasksByID(string? id);
-    Task <ITodoTaskDto> Add(ITodoTaskDto todoTaskDto);
-    Task<ITodoTaskDto> Update(ITodoTaskDto todoTaskDto);
-    Task<bool> Remove(int? id);
+    Task<IEnumerable<TodoTaskDto>> GetTodoTask();
+    Task <TodoTaskDto> GetTodoTasksByID(string? id);
+    Task <TodoTaskDto> Add(TodoTaskDto todoTaskDto);
+    Task<TodoTaskDto> Update(TodoTaskDto todoTaskDto);
+    Task<bool> Remove(string? id);
 }

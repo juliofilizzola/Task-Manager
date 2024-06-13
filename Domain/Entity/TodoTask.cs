@@ -1,31 +1,33 @@
-﻿using Domain.Utils;
-using Domain.Validation;
+﻿using Domain.Validation;
 
 namespace Domain.Entity;
 
 public class TodoTask : Base {
-    public string Name { get; set; }
+    public string Name { get; private set; }
     public string Code { get; set; }
     public string? Description { get; set; }
-    public bool IsComplete { get; set; } = false;
-    public int PercentageCompleted { get; set; } = 0;
+    public bool IsComplete { get; private set; } = false;
+    public int PercentageCompleted { get; private set; } = 0;
     public TodoTask( string name, int percentageCompleted, string? description) {
+        var newCode = Utils.Random.RandomStringCode(6);
         ValidateDomain(name);
-        Id = Ramdom.RandomStringCode(34);
+        Id = Utils.Random.RandomStringCode(34);
+        Code = newCode;
         Name = name;
         Description = description;
         PercentageCompleted = ValidatePercentage(percentage: percentageCompleted);
-        Code = Ramdom.RandomStringCode(6);
+        if (String.IsNullOrEmpty(Code)){
+            Code = newCode;
+        }
         if (PercentageCompleted == 100){
             IsComplete = true;
         }
     }
 
-    public void Update(string name, string code, int percentageCompleted, string? description) {
+    public void Update(string name, int percentageCompleted, string? description) {
         ValidateDomain(name);
         Name = name;
         Description = description;
-        Code = code;
         PercentageCompleted = percentageCompleted;
     }
 

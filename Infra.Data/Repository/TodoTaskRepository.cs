@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Data.Repository;
 
-public class TodoTaskRepository : ITaskRepository {
+public class TodoTaskRepository : ITodoTaskRepository {
     private readonly ApplicationContext _context;
 
     public TodoTaskRepository(ApplicationContext context) {
@@ -17,7 +17,7 @@ public class TodoTaskRepository : ITaskRepository {
         return todos;
     }
 
-    public async Task<Domain.Entity.TodoTask> GetTaskByIdAsync(Int32? id) {
+    public async Task<Domain.Entity.TodoTask> GetTaskByIdAsync(string? id) {
         var todos = await _context.TodoTasks.FindAsync(id);
 
         if (todos == null){

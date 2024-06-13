@@ -3,13 +3,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Application.Dto;
 
-public interface ITodoTaskDto {
+public class TodoTaskDto {
 
     [DisplayName("id")]
-    public string Id { get; init; }
+    public string? Id { get; init; }
 
     [Required(ErrorMessage = "The Name is Required")]
-    [MinLength(3)]
+    [MinLength(1)]
     [MaxLength(100)]
     [DisplayName("name")]
     public string Name { get; init; }
@@ -17,17 +17,17 @@ public interface ITodoTaskDto {
     [MinLength(5)]
     [MaxLength(200)]
     [DisplayName("Description")]
-    public string Description { get; init; }
+    public string? Description { get; init; }
 
     [MinLength(5)]
     [MaxLength(200)]
     [DisplayName("Code")]
-    public string Code { get; init; }
+    public string? Code { get; init; }
 
     [DisplayName("is_complete")]
-    public bool IsComplete { get; init; }
+    public bool? IsComplete { get; init; }
 
     [DisplayName("percentage_completed")]
-    public int PercentageCompleted { get; init; }
+    public int? PercentageCompleted { get; init; }
 
 }

@@ -21,9 +21,19 @@ public class ExceptionHandlingMiddleware {
     {
         context.Response.ContentType = "application/json";
 
-        context.Response.StatusCode = exception is NotFoundException ? StatusCodes.Status404NotFound : StatusCodes.Status500InternalServerError;
+        context.Response.StatusCode = HandlerExceptionStatusCode(exception);
 
         var result = new { message = exception.Message };
+
         return context.Response.WriteAsJsonAsync(result);
+    }
+
+    private static int HandlerExceptionStatusCode(Exception e) {
+        return e switch
+        {
+            NotFoundException   => StatusCodes.Status404NotFound,
+            BadRequestException => StatusCodes.Status400BadRequest,
+            _                   => StatusCodes.Status500InternalServerError
+        };
     }
 }

@@ -21,14 +21,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb8d37a6-8bcc-43b9-a922-7e5b97074690" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Application/Exceptions/NotFoundException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Filters/Result.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Middlewares/ExceptionHandlingMiddleware.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Middlewares/ExceptionHandlingMiddlewareExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/shelf/Uncommitted_changes_before_Update_at_12_06_2024_15_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/shelf/Uncommitted_changes_before_Update_at_12_06_2024_15_54__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Controllers/TodoTaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Controllers/TodoTaskController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Dto/TodoTaskDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Dto/TodoTaskDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Interface/ITodoTaskServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Interface/ITodoTaskServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Mappings/DomainToDtoMappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mappings/DomainToDtoMappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Services/TodoTaskServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/TodoTaskServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entity/TodoTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entity/TodoTask.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -44,6 +57,17 @@
     &quot;assignee&quot;: &quot;juliofilizzola&quot;
   }
 }</component>
+  <component name="GitHubPullRequestState"><![CDATA[{
+  "prStates": [
+    {
+      "id": {
+        "id": "PR_kwDOMHef3M5yRs7Z",
+        "number": 2
+      },
+      "lastSeen": 1718448007125
+    }
+  ]
+}]]></component>
   <component name="GitToolBoxStore">
     <option name="recentBranches">
       <RecentBranches>
@@ -107,34 +131,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Application: https.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Task-Manager: http.executor&quot;: &quot;Run&quot;,
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Docker.docker-compose.yml.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.mongodb: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Infra-data&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Application: https.executor": "Debug",
+    ".NET Launch Settings Profile.Task-Manager: http.executor": "Run",
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Docker.docker-compose.yml.db: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.mongodb: Compose Deployment.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "XThreadsFramesViewSplitterKey": "0.501182",
+    "git-widget-placeholder": "#2 on Infra-data",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\julio.stanik\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\julio.stanik\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\julio.stanik\\AppData\\Local\\Symbols\\src&quot;
+    "rider.external.source.directories": [
+      "C:\\Users\\julio.stanik\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\julio.stanik\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\julio.stanik\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Application: https">
     <configuration name="ConsoleApp1" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -709,5 +734,50 @@
     <MESSAGE value="modify Context and create taskRepository" />
     <MESSAGE value="config" />
     <option name="LAST_COMMIT_MESSAGE" value="config" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Services/TodoTaskServices.cs</url>
+          <line>75</line>
+          <properties documentPath="C:\Users\Julio\RiderProjects\Task-Manager\Application\Services\TodoTaskServices.cs" containingFunctionPresentation="Method 'UpdateProgress'">
+            <startOffsets>
+              <option value="2300" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2336" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Services/TodoTaskServices.cs</url>
+          <line>68</line>
+          <properties documentPath="C:\Users\Julio\RiderProjects\Task-Manager\Application\Services\TodoTaskServices.cs" containingFunctionPresentation="Method 'UpdateProgress'">
+            <startOffsets>
+              <option value="2138" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2290" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Services/TodoTaskServices.cs</url>
+          <line>80</line>
+          <properties documentPath="C:\Users\Julio\RiderProjects\Task-Manager\Application\Services\TodoTaskServices.cs" containingFunctionPresentation="Method 'UpdateProgress'">
+            <startOffsets>
+              <option value="2426" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2427" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

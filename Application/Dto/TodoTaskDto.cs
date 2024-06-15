@@ -31,3 +31,18 @@ public class TodoTaskDto {
     public int? PercentageCompleted { get; init; }
 
 }
+
+public class UpdateTodoTaskDto {
+
+    [DisplayName("name")]
+    public string? Name { get; init; }
+
+    [MinLength(5)]
+    [MaxLength(200)]
+    [DisplayName("Description")]
+    public string? Description { get; init; }
+
+    [DisplayName("percentage_completed")]
+    public int? PercentageCompleted { get; init; }
+
+}

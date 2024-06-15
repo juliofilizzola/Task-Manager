@@ -3,11 +3,11 @@
 namespace Domain.Entity;
 
 public class TodoTask : Base {
-    public string Name { get; private set; }
+    public string Name { get; set; }
     public string Code { get; set; }
     public string? Description { get; set; }
-    public bool IsComplete { get; private set; } = false;
-    public int PercentageCompleted { get; private set; } = 0;
+    public bool IsComplete { get; set; } = false;
+    public int PercentageCompleted { get; set; } = 0;
     public TodoTask( string name, int percentageCompleted, string? description) {
         var newCode = Utils.Random.RandomStringCode(6);
         ValidateDomain(name);

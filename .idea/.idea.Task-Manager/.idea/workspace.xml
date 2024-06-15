@@ -20,17 +20,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb8d37a6-8bcc-43b9-a922-7e5b97074690" name="Changes" comment="">
+    <list default="true" id="eb8d37a6-8bcc-43b9-a922-7e5b97074690" name="Changes" comment="idea">
       <change afterPath="$PROJECT_DIR$/Application/Exceptions/NotFoundException.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Application/Filters/Result.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Application/Middlewares/ExceptionHandlingMiddleware.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Application/Middlewares/ExceptionHandlingMiddlewareExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/shelf/Uncommitted_changes_before_Update_at_12_06_2024_15_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/shelf/Uncommitted_changes_before_Update_at_12_06_2024_15_54__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Task-Manager/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Controllers/TodoTaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Controllers/TodoTaskController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Dto/TodoTaskDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Dto/TodoTaskDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Interface/ITodoTaskServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Interface/ITodoTaskServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Mappings/DomainToDtoMappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mappings/DomainToDtoMappingProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Services/TodoTaskServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/TodoTaskServices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Entity/TodoTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entity/TodoTask.cs" afterDir="false" />
@@ -104,12 +100,13 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/3b8b000a0e115700b18265d8ec8c6307056dc94d/src/coreclr/System.Private.CoreLib/src/System/Threading/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5147b10c5a8c4522b56fba0a889139cfc8f908/73/b5cf6cbf/Task`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Julio/RiderProjects/Task-Manager/Application/Dto/TodoTaskDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Julio/RiderProjects/Task-Manager/Application/Interface/ITodoTaskServices.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Julio/RiderProjects/Task-Manager/Application/Mappings/DomainToDtoMappingProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Julio/RiderProjects/Task-Manager/Application/Services/TodoTaskServices.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infra.Data/Context/ApplicationContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/julio.stanik/Documents/dev/Task-Manager/Infra.Data/Context/ApplicationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infra.IoC/DependencyInjection.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -703,7 +700,39 @@
       <option name="project" value="LOCAL" />
       <updated>1718302840766</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add new mapping">
+      <option name="closed" value="true" />
+      <created>1718457693089</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1718457693089</updated>
+    </task>
+    <task id="LOCAL-00024" summary="add update progress">
+      <option name="closed" value="true" />
+      <created>1718457714270</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1718457714270</updated>
+    </task>
+    <task id="LOCAL-00025" summary="add updateTodoTasksDto">
+      <option name="closed" value="true" />
+      <created>1718457750597</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1718457750597</updated>
+    </task>
+    <task id="LOCAL-00026" summary="idea">
+      <option name="closed" value="true" />
+      <created>1718457764976</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1718457764976</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -733,49 +762,79 @@
     <MESSAGE value="add application" />
     <MESSAGE value="modify Context and create taskRepository" />
     <MESSAGE value="config" />
-    <option name="LAST_COMMIT_MESSAGE" value="config" />
+    <MESSAGE value="Add new mapping" />
+    <MESSAGE value="add update progress" />
+    <MESSAGE value="add updateTodoTasksDto" />
+    <MESSAGE value="idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="idea" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Application/Services/TodoTaskServices.cs</url>
-          <line>75</line>
+          <line>78</line>
           <properties documentPath="C:\Users\Julio\RiderProjects\Task-Manager\Application\Services\TodoTaskServices.cs" containingFunctionPresentation="Method 'UpdateProgress'">
             <startOffsets>
-              <option value="2300" />
+              <option value="2577" />
             </startOffsets>
             <endOffsets>
-              <option value="2336" />
+              <option value="2613" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Application/Services/TodoTaskServices.cs</url>
-          <line>68</line>
+          <line>71</line>
           <properties documentPath="C:\Users\Julio\RiderProjects\Task-Manager\Application\Services\TodoTaskServices.cs" containingFunctionPresentation="Method 'UpdateProgress'">
             <startOffsets>
-              <option value="2138" />
+              <option value="2415" />
             </startOffsets>
             <endOffsets>
-              <option value="2290" />
+              <option value="2567" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Application/Services/TodoTaskServices.cs</url>
-          <line>80</line>
+          <line>83</line>
           <properties documentPath="C:\Users\Julio\RiderProjects\Task-Manager\Application\Services\TodoTaskServices.cs" containingFunctionPresentation="Method 'UpdateProgress'">
             <startOffsets>
-              <option value="2426" />
+              <option value="2703" />
             </startOffsets>
             <endOffsets>
-              <option value="2427" />
+              <option value="2704" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Middlewares/ExceptionHandlingMiddleware.cs</url>
+          <line>23</line>
+          <properties documentPath="C:\Users\Julio\RiderProjects\Task-Manager\Application\Middlewares\ExceptionHandlingMiddleware.cs" containingFunctionPresentation="Method 'HandleExceptionAsync'">
+            <startOffsets>
+              <option value="614" />
+            </startOffsets>
+            <endOffsets>
+              <option value="750" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Middlewares/ExceptionHandlingMiddleware.cs</url>
+          <line>25</line>
+          <properties documentPath="C:\Users\Julio\RiderProjects\Task-Manager\Application\Middlewares\ExceptionHandlingMiddleware.cs" containingFunctionPresentation="Method 'HandleExceptionAsync'">
+            <startOffsets>
+              <option value="760" />
+            </startOffsets>
+            <endOffsets>
+              <option value="809" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

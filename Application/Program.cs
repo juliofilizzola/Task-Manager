@@ -1,5 +1,6 @@
 using Application.Interface;
 using Application.Mappings;
+using Application.Middlewares;
 using Application.Services;
 using Domain.Interfaces;
 using Infra.Data.Context;
@@ -28,6 +29,8 @@ if (app.Environment.IsDevelopment()){
 }
 
 app.UseHttpsRedirection();
+
+app.UseExceptionHandlingMiddleware();
 
 app.UseAuthorization();
 

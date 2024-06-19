@@ -1,0 +1,82 @@
+Index: .idea/.idea.Task-Manager/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"PropertiesComponent\">{}</component>\r\n  <component name=\"RunManager\" selected=\".NET Launch Settings Profile.Task-Manager: IIS Express\">\r\n    <configuration name=\"Task-Manager: IIS Express\" type=\"LaunchSettings\" factoryName=\".NET Launch Settings Profile\">\r\n      <option name=\"LAUNCH_PROFILE_PROJECT_FILE_PATH\" value=\"$PROJECT_DIR$/Task-Manager/Task-Manager.csproj\" />\r\n      <option name=\"LAUNCH_PROFILE_TFM\" value=\"net8.0\" />\r\n      <option name=\"LAUNCH_PROFILE_NAME\" value=\"IIS Express\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <option name=\"USE_MONO\" value=\"0\" />\r\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\r\n      <option name=\"GENERATE_APPLICATIONHOST_CONFIG\" value=\"1\" />\r\n      <option name=\"SHOW_IIS_EXPRESS_OUTPUT\" value=\"0\" />\r\n      <option name=\"SEND_DEBUG_REQUEST\" value=\"1\" />\r\n      <option name=\"ADDITIONAL_IIS_EXPRESS_ARGUMENTS\" value=\"\" />\r\n      <method v=\"2\">\r\n        <option name=\"Build\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Task-Manager: http\" type=\"LaunchSettings\" factoryName=\".NET Launch Settings Profile\">\r\n      <option name=\"LAUNCH_PROFILE_PROJECT_FILE_PATH\" value=\"$PROJECT_DIR$/Task-Manager/Task-Manager.csproj\" />\r\n      <option name=\"LAUNCH_PROFILE_TFM\" value=\"net8.0\" />\r\n      <option name=\"LAUNCH_PROFILE_NAME\" value=\"http\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <option name=\"USE_MONO\" value=\"0\" />\r\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\r\n      <option name=\"GENERATE_APPLICATIONHOST_CONFIG\" value=\"1\" />\r\n      <option name=\"SHOW_IIS_EXPRESS_OUTPUT\" value=\"0\" />\r\n      <option name=\"SEND_DEBUG_REQUEST\" value=\"1\" />\r\n      <option name=\"ADDITIONAL_IIS_EXPRESS_ARGUMENTS\" value=\"\" />\r\n      <method v=\"2\">\r\n        <option name=\"Build\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Task-Manager: https\" type=\"LaunchSettings\" factoryName=\".NET Launch Settings Profile\">\r\n      <option name=\"LAUNCH_PROFILE_PROJECT_FILE_PATH\" value=\"$PROJECT_DIR$/Task-Manager/Task-Manager.csproj\" />\r\n      <option name=\"LAUNCH_PROFILE_TFM\" value=\"net8.0\" />\r\n      <option name=\"LAUNCH_PROFILE_NAME\" value=\"https\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <option name=\"USE_MONO\" value=\"0\" />\r\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\r\n      <option name=\"GENERATE_APPLICATIONHOST_CONFIG\" value=\"1\" />\r\n      <option name=\"SHOW_IIS_EXPRESS_OUTPUT\" value=\"0\" />\r\n      <option name=\"SEND_DEBUG_REQUEST\" value=\"1\" />\r\n      <option name=\"ADDITIONAL_IIS_EXPRESS_ARGUMENTS\" value=\"\" />\r\n      <method v=\"2\">\r\n        <option name=\"Build\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Task-Manager/Dockerfile\" type=\"docker-deploy\" factoryName=\"dockerfile\" server-name=\"Docker\">\r\n      <deployment type=\"dockerfile\">\r\n        <settings>\r\n          <option name=\"imageTag\" value=\"task-manager\" />\r\n          <option name=\"containerName\" value=\"task-manager\" />\r\n          <option name=\"contextFolderPath\" value=\"C:\\Users\\Julio\\RiderProjects\\Task-Manager\" />\r\n          <option name=\"portBindings\">\r\n            <list>\r\n              <DockerPortBindingImpl>\r\n                <option name=\"containerPort\" value=\"8080\" />\r\n                <option name=\"hostIp\" value=\"127.0.0.1\" />\r\n                <option name=\"hostPort\" value=\"8080\" />\r\n              </DockerPortBindingImpl>\r\n            </list>\r\n          </option>\r\n          <option name=\"sourceFilePath\" value=\"Task-Manager/Dockerfile\" />\r\n        </settings>\r\n      </deployment>\r\n      <EXTENSION ID=\"com.jetbrains.rider.docker.debug\" isFastModeEnabled=\"true\" isSslEnabled=\"false\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"docker-deploy\" factoryName=\"docker-compose.yml\" temporary=\"true\">\r\n      <deployment type=\"docker-compose.yml\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"docker-deploy\" factoryName=\"dockerfile\" temporary=\"true\">\r\n      <deployment type=\"dockerfile\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"docker-compose.yml: Compose Deployment\" type=\"docker-deploy\" factoryName=\"docker-compose.yml\" server-name=\"Docker\">\r\n      <deployment type=\"docker-compose.yml\">\r\n        <settings>\r\n          <option name=\"sourceFilePath\" value=\"docker-compose.yml\" />\r\n        </settings>\r\n      </deployment>\r\n      <EXTENSION ID=\"com.jetbrains.rider.docker.debug\" isFastModeEnabled=\"true\" isSslEnabled=\"false\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.Task-Manager/.idea/workspace.xml b/.idea/.idea.Task-Manager/.idea/workspace.xml
+--- a/.idea/.idea.Task-Manager/.idea/workspace.xml	(revision 79185e9cb1732f9eeab522f339fe60c0ce39bec9)
++++ b/.idea/.idea.Task-Manager/.idea/workspace.xml	(date 1718218455939)
+@@ -1,6 +1,37 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="PropertiesComponent">{}</component>
++  <component name="AutoGeneratedRunConfigurationManager">
++    <projectFile>ConsoleApp1/ConsoleApp1.csproj</projectFile>
++    <projectFile>Domain/Domain.csproj</projectFile>
++    <projectFile profileName="Infra.Data">Infra.Data/Infra.Data.csproj</projectFile>
++    <projectFile profileName="Infra.IoC">Infra.IoC/Infra.IoC.csproj</projectFile>
++    <projectFile profileName="IIS Express">Task-Manager/Task-Manager.csproj</projectFile>
++    <projectFile profileName="http">Task-Manager/Task-Manager.csproj</projectFile>
++    <projectFile profileName="https">Task-Manager/Task-Manager.csproj</projectFile>
++    <projectFile profileName="IIS Express">WebApplication1/WebApplication1.csproj</projectFile>
++    <projectFile profileName="http">WebApplication1/WebApplication1.csproj</projectFile>
++    <projectFile profileName="https">WebApplication1/WebApplication1.csproj</projectFile>
++    <projectFile profileName="WorkerService1">WorkerService1/WorkerService1.csproj</projectFile>
++  </component>
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="53d1973e-d5e1-4966-8dee-df9376c234ec" name="Changes" comment="" />
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
++    <OptionsSetting value="false" id="Update" />
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "git-widget-placeholder": "main"
++  }
++}]]></component>
+   <component name="RunManager" selected=".NET Launch Settings Profile.Task-Manager: IIS Express">
+     <configuration name="Task-Manager: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Task-Manager/Task-Manager.csproj" />
+@@ -69,11 +100,17 @@
+       <method v="2" />
+     </configuration>
+     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+-      <deployment type="docker-compose.yml" />
++      <deployment type="docker-compose.yml">
++        <settings />
++      </deployment>
++      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+       <method v="2" />
+     </configuration>
+     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+-      <deployment type="dockerfile" />
++      <deployment type="dockerfile">
++        <settings />
++      </deployment>
++      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+       <method v="2" />
+     </configuration>
+     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+@@ -86,4 +123,11 @@
+       <method v="2" />
+     </configuration>
+   </component>
++  <component name="TaskManager">
++    <servers />
++  </component>
++  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
++  <component name="VcsManagerConfiguration">
++    <option name="LAST_COMMIT_MESSAGE" value="" />
++  </component>
+ </project>
+\ No newline at end of file

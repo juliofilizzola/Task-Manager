@@ -20,7 +20,13 @@ public class TodoTaskServices : ITodoTaskServices {
 
     public async Task<Result<IEnumerable<TodoTaskDto>>> GetTodoTask() {
         var t =await _repo.GetTasksAsync();
-        return Result<IEnumerable<TodoTaskDto>>.SuccessResult(_mapper.Map<IEnumerable<TodoTaskDto>>(t));
+        try{
+            return Result<IEnumerable<TodoTaskDto>>.SuccessResult(_mapper.Map<IEnumerable<TodoTaskDto>>(t));
+        }
+        catch (Exception e){
+            Console.WriteLine(e);
+            throw new BadRequestException("Error in find todos");
+        }
     }
 
     public async Task<Result<TodoTaskDto>> GetTodoTasksById(string? id) {
@@ -41,17 +47,21 @@ public class TodoTaskServices : ITodoTaskServices {
         var todoTask = _mapper.Map<TodoTask>(todoTaskDto);
 
         todoTask.Code = Random.RandomStringCode(6);
-        await _repo.CreateAsync(todoTask);
-        return Result<TodoTaskDto>.SuccessResult(todoTaskDto);
+        try{
+            await _repo.CreateAsync(todoTask);
+            return Result<TodoTaskDto>.SuccessResult(todoTaskDto);
+        }
+        catch (Exception e){
+            Console.WriteLine(e);
+            throw new BadRequestException("Error in create todo");
+        }
     }
 
     public async Task<Result<TodoTaskDto>> Update(UpdateTodoTaskDto todoTaskDto, string id) {
         var todo     = await _repo.GetTaskByIdAsync(id);
         if (todo == null){
-            throw new Exception();
+            throw new NotFoundException("Todo Not Found");
         }
-
-        Console.WriteLine(todoTaskDto.ToString());
 
         if (!String.IsNullOrEmpty(todoTaskDto.Description)){
             todo.Description = todoTaskDto.Description;
@@ -59,14 +69,21 @@ public class TodoTaskServices : ITodoTaskServices {
         if (!String.IsNullOrEmpty(todoTaskDto.Name)){
             todo.Name = todoTaskDto.Name;
         }
-        await _repo.UpdateAsync(todo);
-        return Result<TodoTaskDto>.SuccessResult(_mapper.Map<TodoTaskDto>(await GetTodoTasksById(id)));
+        try{
+            await _repo.UpdateAsync(todo);
+            return Result<TodoTaskDto>.SuccessResult(_mapper.Map<TodoTaskDto>(await GetTodoTasksById(id)));
+        }
+        catch (Exception e){
+            Console.WriteLine(e);
+            throw new BadRequestException("Error in update todo");
+        }
     }
 
     public async Task<Result<TodoTaskDto>> UpdateProgress(string id, int? progress) {
         var todo = await _repo.GetTaskByIdAsync(id);
+
         if (todo == null){
-            throw new CultureNotFoundException();
+            throw new NotFoundException("Todo Not Found");
         }
 
         var setValue = progress switch {
@@ -78,16 +95,17 @@ public class TodoTaskServices : ITodoTaskServices {
 
         todo.PercentageCompleted = setValue;
 
-        if (setValue == 100){
-            todo.IsComplete = true;
-        }
-        else{
-            todo.IsComplete = false;
-        }
+        todo.IsComplete = setValue == 100;
 
-        await _repo.UpdateAsync(todo);
+        try{
+            await _repo.UpdateAsync(todo);
 
-        return Result<TodoTaskDto>.SuccessResult(_mapper.Map<TodoTaskDto>(await GetTodoTasksById(id)));
+            return Result<TodoTaskDto>.SuccessResult(_mapper.Map<TodoTaskDto>(await GetTodoTasksById(id)));
+        }
+        catch (Exception e){
+            Console.WriteLine(e);
+            throw new BadRequestException($"error: ${e}");
+        }
     }
 
     public async Task<Result<bool>> Remove(string? id) {
@@ -96,9 +114,8 @@ public class TodoTaskServices : ITodoTaskServices {
         }
         var todoTask = await _repo.GetTaskByIdAsync(id);
         if (todoTask == null){
-            throw new Exception();
+            throw new NotFoundException("Todo NotFound");
         }
-
 
         try{
             await _repo.RemoveAsync(todoTask);
@@ -106,7 +123,7 @@ public class TodoTaskServices : ITodoTaskServices {
         }
         catch (Exception e){
             Console.WriteLine(e);
-            throw;
+            throw new BadRequestException($"error: ${e}");
         }
     }
 }

@@ -33,8 +33,12 @@ jobs:
 
       - name: Commit changes
         run: |
-          git add .
-          git commit -m "Automated update of README with tag history"
-          git push
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "Automated update of README with tag history"
+            git push
+          else
+            echo "No changes to commit"
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}

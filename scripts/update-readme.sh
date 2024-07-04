@@ -11,19 +11,19 @@ echo "Iniciando conteúdo do README.md..."
   echo ""
   echo "## Histórico de Tags"
   echo ""
-} > ./../README-UPDATES.md
+} > ./README-UPDATES.md
 
 # Adicionar informações sobre cada tag ao README.md
 for TAG in $LATEST_TAGS; do
   echo "Iniciando conteúdo do README.md..."
   echo $TAG
-  echo "### $TAG" >> ./../README-UPDATES.md
-  echo "" >> ./../README-UPDATES.md
-  git show $TAG --no-patch --pretty="format:%aD - %an%n%n%s%n%b" | sed '/^-----BEGIN PGP SIGNATURE-----$/,/^-----END PGP SIGNATURE-----$/d'>> ./../README-UPDATES.md
-  echo "" >> ./../README-UPDATES.md
+  echo "### $TAG" >> ./README-UPDATES.md
+  echo "" >> ./README-UPDATES.md
+  git show $TAG --no-patch --pretty="format:%aD - %an%n%n%s%n%b" | sed '/^-----BEGIN PGP SIGNATURE-----$/,/^-----END PGP SIGNATURE-----$/d'>> ./README-UPDATES.md
+  echo "" >> ./README-UPDATES.md
 done
 
 # Adicionar data de atualização ao README.md
 {
   echo "## Atualizado em: $(date)"
-} >> ./../README-UPDATES.md
+} >> ./README-UPDATES.md

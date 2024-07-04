@@ -24,6 +24,10 @@ jobs:
       - name: Fetch all Tags from TASK-MANAGER
         run: git fetch --tags
 
+      - name: Add permission
+        run: |
+          chmod +x update-readme.sh
+
       - name: Update README
         run: |
           git add .

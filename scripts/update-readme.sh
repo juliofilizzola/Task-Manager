@@ -16,7 +16,7 @@ LATEST_TAGS=$(git tag --sort=-creatordate | head -n 5)
 for TAG in $LATEST_TAGS; do
   echo "### $TAG" >> README-UPDATES.md
   echo "" >> README-UPDATES.md
-  git show "$TAG" --no-patch --format="%aD - %an%n%n%s%n%b" >> README.md
+  git show "$TAG" --no-patch --format="%aD - %an%n%n%s%n%b" >> README-UPDATES.md
   echo "" >> README-UPDATES.md
 done
 

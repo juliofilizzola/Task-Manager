@@ -1,0 +1,31 @@
+name: Update README TASK_MANAGER
+on:
+  push:
+    tags: '*'
+
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-reademe:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git from commited
+        run: |
+          git config --global user.name 'git-actions[bot]'
+          git config --global user.email 'git-actions[bot]@users.noreply.github.com'
+
+      - name: Fetch all Tags from TASK-MANAGER
+        run: git fetch --tags
+
+      - name: Update README
+        run: |
+          git add README.md
+          git commit -m "Automated update of README with tag history"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

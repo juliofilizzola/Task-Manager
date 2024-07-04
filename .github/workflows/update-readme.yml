@@ -18,13 +18,20 @@ jobs:
 
       - name: Set up Git from commited
         run: |
-          git config --global user.name 'git-actions[bot]'
-          git config --global user.email 'git-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Fetch all Tags from TASK-MANAGER
         run: git fetch --tags
 
+      - name: Add permission
+        run: |
+          chmod +x ./scripts/update-readme.sh
+
       - name: Update README
+        run: ./scripts/update-readme.sh
+
+      - name: Commit changes
         run: |
           git add .
           git commit -m "Automated update of README with tag history"

@@ -6,7 +6,7 @@ LATEST_TAGS=$(git tag --sort=-creatordate | head -n 5)
 # Iniciar o conteúdo do README.md
 echo "Iniciando conteúdo do README.md..."
 {
-  echo "# Meu Projeto"
+  echo "# Atualizações das Features"
   echo "Este é um README gerado automaticamente."
   echo ""
   echo "## Histórico de Tags"

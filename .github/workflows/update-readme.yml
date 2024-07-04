@@ -29,6 +29,9 @@ jobs:
           chmod +x ./scripts/update-readme.sh
 
       - name: Update README
+        run: ./update-readme.sh
+
+      - name: Commit changes
         run: |
           git add .
           git commit -m "Automated update of README with tag history"

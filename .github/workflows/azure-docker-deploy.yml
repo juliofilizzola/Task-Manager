@@ -52,7 +52,7 @@ jobs:
       - name: Push Docker image to ACR
         run: |
           TAG=${{ steps.get_tag.outputs.TAG }}
-          docker login filizzola.azurecr.io -u ${{ secrets.ACR_USERNAME }} --password-stdin
+          echo ${{ secrets.ACR_PASSWORD }} | docker login filizzola.azurecr.io --username ${{ secrets.ACR_USERNAME }} --password-stdin
           docker push filizzola.azurecr.io/task-manager:$TAG
 
       - name: Deploy to Azure Container Instances

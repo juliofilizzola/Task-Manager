@@ -53,8 +53,17 @@ jobs:
         run: |
           TAG=${{ steps.get_tag.outputs.TAG }}
           echo ${{ secrets.ACR_PASSWORD }} | docker login filizzola.azurecr.io --username ${{ secrets.ACR_USERNAME }} --password-stdin
-          docker push filizzola.azurecr.io/task-manager:$TAG
+      
+      - name: Build docker ACR
+        run: |
+          TAG=${{ steps.get_tag.outputs.TAG }}
+          docker build filizzola.azurecr.io/task-manager:$TAG juliofilizzola/task-manager:$TAG
 
+      - name: Push
+        run: |
+          TAG=${{ steps.get_tag.outputs.TAG }}
+          docker push filizzola.azurecr.io/task-manager:$TAG
+      
       - name: Deploy to Azure Container Instances
         run: |
           TAG=${{ steps.get_tag.outputs.TAG }}

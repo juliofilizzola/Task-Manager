@@ -57,7 +57,7 @@ jobs:
       - name: Build docker ACR
         run: |
           TAG=${{ steps.get_tag.outputs.TAG }}
-          docker build filizzola.azurecr.io/task-manager:$TAG juliofilizzola/task-manager:$TAG
+          docker build -t filizzola.azurecr.io/task-manager:$TAG .
 
       - name: Push
         run: |

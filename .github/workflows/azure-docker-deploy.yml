@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Build the Docker image
         run: |
-          TAG=${{ steps.get_tag.outputs.tag }}
+          TAG=${{ steps.get_tag.outputs.TAG }}
           echo "::set-output name=tag::$TAG"
           docker build --file Dockerfile --tag juliofilizzola/task-manager:$TAG .
 

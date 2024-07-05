@@ -1,8 +1,8 @@
 name: Update README TASK_MANAGER
 on:
   push:
-    branches: 
-      - main
+    tags:
+    - '*'
 
   schedule:
     - cron: '0 0 * * *'

@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Checkout repository
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: Build the Docker image
         run: |
           TAG=${{ steps.build-image.outputs.tag }}

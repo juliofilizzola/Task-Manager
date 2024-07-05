@@ -44,7 +44,7 @@ jobs:
       - name: Push Docker image
         run: |
           TAG=${{ steps.get_tag.outputs.TAG }}
-          docker push image juliofilizzola/task-manager:$TAG
+          docker push -a juliofilizzola/task-manager:$TAG
 
 
   deploy:

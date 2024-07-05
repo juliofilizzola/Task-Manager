@@ -15,11 +15,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+        fetch-depth: 0
 
       - name: Get tag name
         id: get_tag
         run: |
-          TAG=$(git describe --tags)
+          TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
           echo "Latest tag: $TAG"
           echo "::set-output name=tag::$TAG"
 

@@ -55,6 +55,8 @@ jobs:
     steps:
       - env:
           tag: ${{ needs. build-docker-img.tag }}
+        run: echo "$tag"
+
       - name: Login Docker
         run: |
           echo ${{ secrets.ACR_PASSWORD }} | docker login filizzola.azurecr.io --username ${{ secrets.ACR_USERNAME }} --password-stdin

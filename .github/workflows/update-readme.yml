@@ -1,0 +1,43 @@
+name: Update README TASK_MANAGER
+on:
+  push:
+    tags:
+    - '*'
+
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-reademe:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git from commited
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Fetch all Tags from TASK-MANAGER
+        run: git fetch --tags
+
+      - name: Add permission
+        run: |
+          chmod +x ./scripts/update-readme.sh
+
+      - name: Update README
+        run: ./scripts/update-readme.sh
+
+      - name: Commit changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "Automated update of README with tag history"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}

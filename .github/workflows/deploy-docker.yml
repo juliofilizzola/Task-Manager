@@ -56,6 +56,13 @@ jobs:
       - env:
           tag: ${{ needs.build-docker-img.outputs.tag }}
         run: echo "$tag"
+      
+      - name: Log in to Docker Hub
+        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3.0.0
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      
       - name: Pull Image docker
         run: |
           echo "Pulling image with tag: ${{ needs.build-docker-img.outputs.tag }}"

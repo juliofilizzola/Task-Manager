@@ -40,7 +40,6 @@ jobs:
       - name: Build the Docker image
         run: |
           TAG=${{ steps.get_tag.outputs.TAG }}
-          echo "::set-output name=tag::$TAG"
           docker build --file Dockerfile --tag juliofilizzola/task-manager:$TAG .
 
       - name: Push Docker image
@@ -64,15 +63,12 @@ jobs:
 
       - name: Pull docker image
         run: |
-          TAG=$tag
-          docker pull juliofilizzola/task-manager:$TAG
+          docker pull juliofilizzola/task-manager:$tag
 
       - name: Tag img docker
         run: |
-          TAG=$tag
-          docker tag juliofilizzola/task-manager:$TAG filizzola.azurecr.io/task-manager:$TAG
+          docker tag juliofilizzola/task-manager:$tag filizzola.azurecr.io/task-manager:$tag
 
       - name: Push docker img
         run: |
-          TAG=$tag
-          docker push -q filizzola.azurecr.io/task-manager:$TAG
+          docker push -q filizzola.azurecr.io/task-manager:$tag

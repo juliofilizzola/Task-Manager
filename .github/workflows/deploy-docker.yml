@@ -52,8 +52,7 @@ jobs:
     steps:
       - name: Login Docker
         run: |
-          docker login filizzola.azurecr.io -u ${{ secrets.ACR_USERNAME }} --password-stdin
-
+          echo ${{ secrets.ACR_PASSWORD }} | docker login filizzola.azurecr.io --username ${{ secrets.ACR_USERNAME }} --password-stdin
 
       - name: Pull docker image
         run: docker pull juliofilizzola/task-manager:$TAG

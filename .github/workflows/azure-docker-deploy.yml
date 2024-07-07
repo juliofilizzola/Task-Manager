@@ -63,7 +63,12 @@ jobs:
         run: |
           TAG=${{ steps.get_tag.outputs.TAG }}
           docker push filizzola.azurecr.io/task-manager:$TAG
-      
+          
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Deploy to Azure Container Instances
         run: |
           TAG=${{ steps.get_tag.outputs.TAG }}

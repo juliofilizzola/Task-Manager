@@ -23,19 +23,19 @@ jobs:
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: true
  
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
-      - name: Get tag name
-        id: get_tag
-        run: |
-          TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
-          echo "Latest tag: $TAG"
-          echo "::set-output name=tag::$TAG"
+    - name: Get tag name
+      id: get_tag
+      run: |
+        TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+        echo "Latest tag: $TAG"
+        echo "::set-output name=tag::$TAG"
 
-      - name: Deploy to Azure APP
-        run: |
-          TAG=${{ steps.get_tag.outputs.TAG }}
-          az webapp config container set --name task-manager-app-back --resource-group task-manager --docker-custom-image-name filizzola/task-manager:$TAG
+    - name: Deploy to Azure APP
+      run: |
+        TAG=${{ steps.get_tag.outputs.TAG }}
+        az webapp config container set --name task-manager-app-back --resource-group task-manager --docker-custom-image-name filizzola/task-manager:$TAG

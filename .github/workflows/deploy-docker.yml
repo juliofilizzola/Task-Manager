@@ -63,6 +63,7 @@ jobs:
 
       - name: Pull Image docker
         run: |
+          echo "Pulling image with tag: $tag"
           docker pull juliofilizzola/task-manager:$tag
 
       - name: Tag img docker

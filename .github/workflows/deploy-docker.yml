@@ -63,13 +63,14 @@ jobs:
 
       - name: Pull Image docker
         run: |
-          echo "Pulling image with tag: ${{ env.tag }}"
-          docker pull juliofilizzola/task-manager:${{ env.tag }}
+          echo "Pulling image with tag: ${{ needs.build-docker-img.outputs.tag }}"
+          
+          docker pull juliofilizzola/task-manager:${{ needs.build-docker-img.outputs.tag }}
 
       - name: Tag img docker
         run: |
-          docker tag juliofilizzola/task-manager:${{ env.tag }} filizzola.azurecr.io/task-manager:${{ env.tag }}
+          docker tag juliofilizzola/task-manager:${{ needs.build-docker-img.outputs.tag }} filizzola.azurecr.io/task-manager:${{ needs.build-docker-img.outputs.tag }}
 
       - name: Push docker img
         run: |
-          docker push -q filizzola.azurecr.io/task-manager:${{ env.tag }}
+          docker push -q filizzola.azurecr.io/task-manager:${{ needs.build-docker-img.outputs.tag }}

@@ -11,6 +11,9 @@ jobs:
     runs-on:
       - ubuntu-latest
 
+    outputs:
+      tag: ${{ steps.get_tag.outputs.TAG }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -50,21 +53,23 @@ jobs:
     runs-on:
       - ubuntu-latest
     steps:
+      - env:
+          tag: ${{ needs. build-docker-img.tag }}
       - name: Login Docker
         run: |
           echo ${{ secrets.ACR_PASSWORD }} | docker login filizzola.azurecr.io --username ${{ secrets.ACR_USERNAME }} --password-stdin
 
       - name: Pull docker image
         run: |
-          TAG=${{ steps.get_tag.outputs.TAG }}
+          TAG=$tag
           docker pull juliofilizzola/task-manager:$TAG
 
       - name: Tag img docker
         run: |
-          TAG=${{ steps.get_tag.outputs.TAG }}
+          TAG=$tag
           docker tag juliofilizzola/task-manager:$TAG filizzola.azurecr.io/task-manager:$TAG
 
       - name: Push docker img
         run: |
-          TAG=${{ steps.get_tag.outputs.TAG }}
+          TAG=$tag
           docker push -q filizzola.azurecr.io/task-manager:$TAG

@@ -25,8 +25,9 @@ jobs:
         run: |
           TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
           echo "Latest tag: $TAG"
-          echo tag=$TAG >> "GITHUB_OUTPUT"
-      
+          echo tag=$TAG >> "$GITHUB_OUTPUT"
+          echo tag=$TAG >> "GITHUB_STATE"
+
       - name: Set up Docker Build
         uses: docker/setup-buildx-action@f95db51fddba0c2d1ec667646a06c2ce06100226 # v3.0.0
 

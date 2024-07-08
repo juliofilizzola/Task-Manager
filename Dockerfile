@@ -23,6 +23,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build-env /app/out .
 
+ENV DB_CONNECTION_STRING=${DB_CONNECTION_STRING}
 # Exponha a porta usada pela aplicação
 EXPOSE 5005
 EXPOSE 7027

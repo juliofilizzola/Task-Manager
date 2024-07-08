@@ -7,8 +7,11 @@ using Infra.Data.Context;
 using Infra.Data.Repository;
 using Infra.IoC;
 
-var builder = WebApplication.CreateBuilder(args);
+DotNetEnv.Env.Load();
 
+
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddInfrastructure(builder.Configuration);
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationContext>();
 builder.Services.AddControllers();

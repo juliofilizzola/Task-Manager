@@ -40,12 +40,12 @@ jobs:
       - name: Build the Docker image
         run: |
           TAG=${{ steps.get_tag.outputs.TAG }}
-          docker build --file Dockerfile --tag juliofilizzola/task-manager:$TAG .
+          docker build --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/task-manager:$TAG .
 
       - name: Push Docker image
         run: |
           TAG=${{ steps.get_tag.outputs.TAG }}
-          docker push -q juliofilizzola/task-manager:$TAG
+          docker push -q ${{ secrets.DOCKER_USERNAME }}/task-manager:$TAG
 
   build-docker-azure:
     needs:
@@ -67,17 +67,17 @@ jobs:
         run: |
           echo "Pulling image with tag: ${{ needs.build-docker-img.outputs.tag }}"
           
-          docker pull juliofilizzola/task-manager:${{ needs.build-docker-img.outputs.tag }}
+          docker pull ${{ secrets.DOCKER_USERNAME }}/task-manager:${{ needs.build-docker-img.outputs.tag }}
 
       - name: Login Docker
         run: |
-          echo ${{ secrets.ACR_PASSWORD }} | docker login filizzola.azurecr.io --username ${{ secrets.ACR_USERNAME }} --password-stdin
+          echo ${{ secrets.ACR_PASSWORD }} | docker login ${{ secrets.ACR_DOCKER_NAME }}.azurecr.io --username ${{ secrets.ACR_USERNAME }} --password-stdin
 
       
       - name: Tag img docker
         run: |
-          docker tag juliofilizzola/task-manager:${{ needs.build-docker-img.outputs.tag }} filizzola.azurecr.io/task-manager:${{ needs.build-docker-img.outputs.tag }}
+          docker tag ${{ secrets.DOCKER_USERNAME }}/task-manager:${{ needs.build-docker-img.outputs.tag }} ${{ secrets.ACR_DOCKER_NAME }}.azurecr.io/task-manager:${{ needs.build-docker-img.outputs.tag }}
 
       - name: Push docker img
         run: |
-          docker push -q filizzola.azurecr.io/task-manager:${{ needs.build-docker-img.outputs.tag }}
+          docker push -q ${{ secrets.ACR_DOCKER_NAME }}.azurecr.io/task-manager:${{ needs.build-docker-img.outputs.tag }}

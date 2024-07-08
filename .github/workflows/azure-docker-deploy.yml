@@ -36,4 +36,4 @@ jobs:
     - name: Deploy to Azure APP
       run: |
         TAG=${{ steps.get_tag.outputs.TAG }}
-        az webapp config container set --name task-manager-app-back --resource-group task-manager --container-image-name filizzola/task-manager:$TAG
+        az webapp config container set --name task-manager-app-back --resource-group task-manager --container-image-name ${{ secrets.DOCKER_USERNAME }}/task-manager:$TAG

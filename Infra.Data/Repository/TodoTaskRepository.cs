@@ -17,14 +17,16 @@ public class TodoTaskRepository : ITodoTaskRepository {
         return todos;
     }
 
-    public async Task<Domain.Entity.TodoTask> GetTaskByIdAsync(string? id) {
-        var todos = await _context.TodoTasks.FindAsync(id);
+    public async Task<Domain.Entity.TodoTask> GetTaskByIdAsync(String? id)
+    {
+        var task = await _context.TodoTasks.FindAsync(id);
 
-        if (todos == null){
-            throw new NullReferenceException();
+        if (task == null)
+        {
+            throw new ArgumentException($"Task with ID {id} not found");
         }
 
-        return todos;
+        return task;
     }
 
     public async Task<Domain.Entity.TodoTask> CreateAsync(Domain.Entity.TodoTask todoTask) {

@@ -69,6 +69,10 @@ Task-Manager é uma aplicação em C# projetada para gerenciar e organizar taref
     ```
 6. Abra um pull request.
 
+## Atualizações
+
+Você pode conferir aqui [**`updates`**](./README-UPDATES.MD)
+
 ## Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.

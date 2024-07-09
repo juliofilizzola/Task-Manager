@@ -39,7 +39,7 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git add .
             git commit -m "Automated update of README with tag history"
-            git push
+            git push origin main
           else
             echo "No changes to commit"
           fi

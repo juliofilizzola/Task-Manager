@@ -26,3 +26,61 @@ jobs:
 
       - name: Run tests
         run: dotnet test --no-build --verbosity normal
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
+
+      - name: Run tests
+        id: tests
+        run: |
+          dotnet test --no-build --verbosity normal > test-results.txt
+          cat test-results.txt
+
+      - name: Create test results summary
+        id: create-summary
+        run: |
+          test_count=$(grep -o 'Total tests: [0-9]*' test-results.txt | awk '{print $3}')
+          passed_count=$(grep -o 'Passed: [0-9]*' test-results.txt | awk '{print $2}')
+          failed_count=$(grep -o 'Failed: [0-9]*' test-results.txt | awk '{print $2}')
+          skipped_count=$(grep -o 'Skipped: [0-9]*' test-results.txt | awk '{print $2}')
+          echo "::set-output name=test_count::$test_count"
+          echo "::set-output name=passed_count::$passed_count"
+          echo "::set-output name=failed_count::$failed_count"
+          echo "::set-output name=skipped_count::$skipped_count"
+
+      - name: Post test results as a comment
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const testCount = '${{ steps.create-summary.outputs.test_count }}';
+            const passedCount = '${{ steps.create-summary.outputs.passed_count }}';
+            const failedCount = '${{ steps.create-summary.outputs.failed_count }}';
+            const skippedCount = '${{ steps.create-summary.outputs.skipped_count }}';
+            const commentBody = `
+            ### Test Results
+            - **Total tests:** ${testCount}
+            - **Passed tests:** ${passedCount}
+            - **Failed tests:** ${failedCount}
+            - **Skipped tests:** ${skippedCount}
+            `;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });

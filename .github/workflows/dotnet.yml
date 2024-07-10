@@ -57,6 +57,8 @@ jobs:
           passed_count=$(grep -o 'Passed: [0-9]*' test-results.txt | awk '{print $2}')
           failed_count=$(grep -o 'Failed: [0-9]*' test-results.txt | awk '{print $2}')
           skipped_count=$(grep -o 'Skipped: [0-9]*' test-results.txt | awk '{print $2}')
+          echo test_count
+          echo passed_count
           echo "::set-output name=test_count::$test_count"
           echo "::set-output name=passed_count::$passed_count"
           echo "::set-output name=failed_count::$failed_count"

@@ -69,10 +69,10 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const testCount = '${{ steps.create-summary.outputs.test_count }}';
-            const passedCount = '${{ steps.create-summary.outputs.passed_count }}';
-            const failedCount = '${{ steps.create-summary.outputs.failed_count }}';
-            const skippedCount = '${{ steps.create-summary.outputs.skipped_count }}';
+            const testCount = '${{ steps.create-summary.outputs.test_count || 0 }}';
+            const passedCount = '${{ steps.create-summary.outputs.passed_count || 0 }}';
+            const failedCount = '${{ steps.create-summary.outputs.failed_count || 0 }}';
+            const skippedCount = '${{ steps.create-summary.outputs.skipped_count || 0 }}';
             const commentBody = `
             ### Test Results
             - **Total tests:** ${testCount}

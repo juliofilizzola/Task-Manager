@@ -4,5 +4,9 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::63A1849F-5079-4205-85B1-7176202BF6F7::net8.0::Domain.Test.Validation.DomainExceptionValidationTest1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::63A1849F-5079-4205-85B1-7176202BF6F7::net8.0::Domain.Test.Utils.RandomTest1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::63A1849F-5079-4205-85B1-7176202BF6F7::net8.0::Domain.Test.Entity.BaseTest1.id_is_generated_automatically_upon_object_creation&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::63A1849F-5079-4205-85B1-7176202BF6F7::net8.0::Domain.Test.Entity.BaseTest1.create_at_is_generated_automatically_upon_object_creation&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::63A1849F-5079-4205-85B1-7176202BF6F7::net8.0::Domain.Test.Entity.BaseTest1.create_at_has_default_value&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::63A1849F-5079-4205-85B1-7176202BF6F7::net8.0::Domain.Test.Entity.BaseTest1&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

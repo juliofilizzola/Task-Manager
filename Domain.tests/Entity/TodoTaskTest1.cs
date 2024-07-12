@@ -3,7 +3,7 @@ using Domain.Validation;
 using System;
 using Xunit;
 
-namespace Domain.Test.Entity;
+namespace Domain.Tests.Entity;
 
 public class TodoTaskTest1
 {

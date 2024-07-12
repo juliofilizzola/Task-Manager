@@ -1,4 +1,4 @@
-namespace Domain.Test.Utils;
+namespace Domain.Tests.Utils;
 
 public class RandomTest1 {
 

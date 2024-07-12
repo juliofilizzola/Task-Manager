@@ -1,4 +1,4 @@
-namespace Domain.Test;
+namespace Domain.tests;
 
 public class UnitTest1 {
     [Fact]

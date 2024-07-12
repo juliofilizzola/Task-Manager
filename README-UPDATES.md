@@ -3,6 +3,18 @@ Este é um README gerado automaticamente.
 
 ## Histórico de Tags
 
+### 0.00.1
+
+Tue, 9 Jul 2024 10:10:44 -0300 - julio_filizzola
+
+Add 'git pull origin main' step to update-readme.yml workflow
+
+### 0.00.1-relese
+
+Tue, 9 Jul 2024 00:48:15 +0000 - github-actions[bot]
+
+Automated update of README with tag history
+
 ### INIT
 
 tag INIT
@@ -22,4 +34,4 @@ Thu, 4 Jul 2024 21:01:05 -0300 - julio_filizzola
 
 Merging devops
 
-## Atualizado em: Mon Jul  8 00:49:58 UTC 2024
+## Atualizado em: Wed Jul 10 00:49:04 UTC 2024

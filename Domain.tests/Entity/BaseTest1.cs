@@ -1,7 +1,7 @@
 using Domain.Entity;
 using Domain.Utils;
 
-namespace Domain.Test.Entity;
+namespace Domain.Tests.Entity;
 
 public class BaseTest1 {
 

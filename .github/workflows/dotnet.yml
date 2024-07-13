@@ -27,6 +27,7 @@ jobs:
       - name: Build
         run: |
           for sln in $(find . -name '*.sln'); do
+            echo "Building $sln"
             dotnet build $sln --no-restore
           done
 
@@ -38,6 +39,7 @@ jobs:
             test_file="test-results/$(basename $sln).txt"
             dotnet test "$sln" --no-build --verbosity normal > "$test_file"
             cat "$test_file"
+            echo "$test_file"
           done
 
       - name: Create test results summary

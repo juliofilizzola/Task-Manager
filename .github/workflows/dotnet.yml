@@ -33,9 +33,11 @@ jobs:
       - name: Run tests
         id: tests
         run: |
+          mkdir -p test-results
           for sln in $(find . -name '*.sln'); do
-            dotnet test $sln --no-build --verbosity normal > test-results-$sln.txt
-            cat test-results-$sln.txt
+            test_file="test-results/$(basename $sln).txt"
+            dotnet test "$sln" --no-build --verbosity normal > "$test_file"
+            cat "$test_file"
           done
 
       - name: Create test results summary

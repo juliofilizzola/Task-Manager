@@ -10,6 +10,22 @@ namespace Application.tests.Services;
 
 public class TodoTaskServicesTest1 {
 
+    // Update throws an exception if the task to update does not exist
+    [Fact]
+    public async Task update_throws_exception_if_task_does_not_exist()
+    {
+        // Arrange
+        var mockRepo = new Mock<ITodoTaskRepository>();
+        var mockMapper = new Mock<IMapper>();
+        mockRepo.Setup(repo => repo.GetTaskByIdAsync(It.IsAny<string>())).ReturnsAsync((TodoTask)null);
+
+        var service = new TodoTaskServices(mockRepo.Object, mockMapper.Object);
+
+        // Act & Assert
+        await Assert.ThrowsAsync<Exception>(() => service.Update(new UpdateTodoTaskDto(), "invalid-id"));
+    }
+
+
     // Retrieve all todo tasks successfully
     [Fact]
     public async Task retrieve_all_todo_tasks_successfully()
@@ -66,6 +82,19 @@ public class TodoTaskServicesTest1 {
         // Act & Assert
         await Assert.ThrowsAsync<NotFoundException>(() => service.GetTodoTasksById(null));
         await Assert.ThrowsAsync<NotFoundException>(() => service.GetTodoTasksById(string.Empty));
+    }
+
+    [Fact]
+    public async Task update_progress_of_todo_task_with_null_or_empty_id()
+    {
+        // Arrange
+        var mockRepo   = new Mock<ITodoTaskRepository>();
+        var mockMapper = new Mock<IMapper>();
+        var service    = new TodoTaskServices(mockRepo.Object, mockMapper.Object);
+
+        // Act & Assert
+        await Assert.ThrowsAsync<NotFoundException>(() => service.UpdateProgress(null, 50));
+        await Assert.ThrowsAsync<NotFoundException>(() => service.UpdateProgress("", 50));
     }
 
 }

@@ -48,6 +48,7 @@ jobs:
         id: tests
         run: |
           dotnet test --no-build --verbosity normal > test-results.txt
+          cat test-results.txt
 
       - name: Create test results summary
         id: create-summary
@@ -57,16 +58,16 @@ jobs:
           total_failed=0
           total_skipped=0
           
-          for result in $(ls test-results-*.txt); do
-          test_count=$(grep -o 'Total tests: [0-9]*' $result | awk '{print $3}')
-          passed_count=$(grep -o 'Passed: [0-9]*' $result | awk '{print $2}')
-          failed_count=$(grep -o 'Failed: [0-9]*' $result | awk '{print $2}')
-          skipped_count=$(grep -o 'Skipped: [0-9]*' $result | awk '{print $2}')
-          
-          total_tests=$((total_tests + test_count))
-          total_passed=$((total_passed + passed_count))
-          total_failed=$((total_failed + failed_count))
-          total_skipped=$((total_skipped + skipped_count))
+          for result in $(ls test-results.txt); do
+            test_count=$(grep -o 'Total tests: [0-9]*' $result | awk '{print $3}')
+            passed_count=$(grep -o 'Passed: [0-9]*' $result | awk '{print $2}')
+            failed_count=$(grep -o 'Failed: [0-9]*' $result | awk '{print $2}')
+            skipped_count=$(grep -o 'Skipped: [0-9]*' $result | awk '{print $2}')
+            
+            total_tests=$((total_tests + test_count))
+            total_passed=$((total_passed + passed_count))
+            total_failed=$((total_failed + failed_count))
+            total_skipped=$((total_skipped + skipped_count))
           done
           
           echo "::set-output name=total_tests::$total_tests"

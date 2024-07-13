@@ -1,4 +1,4 @@
-name: .NET Core CI
+name: .NET Core
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,84 +16,82 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '8.0' # alterado para a versão 8.0
 
       - name: Restore dependencies
-        run: |
-          for sln in $(find . -name '*.sln'); do
-            dotnet restore $sln
-          done
+        run: dotnet restore
 
       - name: Build
-        run: |
-          for sln in $(find . -name '*.sln'); do
-            echo "Building $sln"
-            dotnet build $sln --no-restore
-          done
+        run: dotnet build --no-restore
+
+      - name: Run tests
+        run: dotnet test --no-build --verbosity normal
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.0'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
 
       - name: Run tests
         id: tests
         run: |
-          mkdir -p test-results
-          for sln in $(find . -name '*.sln'); do
-            test_file="test-results/$(basename $sln).txt"
-            dotnet test "$sln" --no-build --verbosity normal > "$test_file"
-            cat "$test_file"
-            echo "$test_file"
-          done
+          dotnet test --no-build --verbosity normal > test-results.txt
+          cat test-results.txt
+          echo "$test-results.txt"
 
       - name: Create test results summary
         id: create-summary
         run: |
-          total_tests=0
-          total_passed=0
-          total_failed=0
-          total_skipped=0
-
-          for result in $(ls test-results); do
-            test_count=$(grep -o 'Total tests: [0-9]*' $result | awk '{print $3}')
-            passed_count=$(grep -o 'Passed: [0-9]*' $result | awk '{print $2}')
-            failed_count=$(grep -o 'Failed: [0-9]*' $result | awk '{print $2}')
-            skipped_count=$(grep -o 'Skipped: [0-9]*' $result | awk '{print $2}')
-          
-            total_tests=$((total_tests + test_count))
-            total_passed=$((total_passed + passed_count))
-            total_failed=$((total_failed + failed_count))
-            total_skipped=$((total_skipped + skipped_count))
-          done
-
-          echo "::set-output name=total_tests::$total_tests"
-          echo "::set-output name=total_passed::$total_passed"
-          echo "::set-output name=total_failed::$total_failed"
-          echo "::set-output name=total_skipped::$total_skipped"
+          test_count=$(grep -o 'Total tests: [0-9]*' test-results.txt | awk '{print $3}')
+          passed_count=$(grep -o 'Passed: [0-9]*' test-results.txt | awk '{print $2}')
+          failed_count=$(grep -o 'Failed: [0-9]*' test-results.txt | awk '{print $2}')
+          skipped_count=$(grep -o 'Skipped: [0-9]*' test-results.txt | awk '{print $2}')
+          echo test_count
+          echo passed_count
+          echo "::set-output name=test_count::$test_count"
+          echo "::set-output name=passed_count::$passed_count"
+          echo "::set-output name=failed_count::$failed_count"
+          echo "::set-output name=skipped_count::$skipped_count"
 
       - name: Post test results as a comment
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const totalTests = '${{ steps.create-summary.outputs.total_tests }}';
-            const totalPassed = '${{ steps.create-summary.outputs.total_passed }}';
-            const totalFailed = '${{ steps.create-summary.outputs.total_failed }}';
-            const totalSkipped = '${{ steps.create-summary.outputs.total_skipped }}';
+            const testCount = '${{ steps.create-summary.outputs.test_count || 0 }}';
+            const passedCount = '${{ steps.create-summary.outputs.passed_count || 0 }}';
+            const failedCount = '${{ steps.create-summary.outputs.failed_count || 0 }}';
+            const skippedCount = '${{ steps.create-summary.outputs.skipped_count || 0 }}';
             const commentBody = `
               ## :white_check_mark: Test Results Summary
             
               | Total Tests | Passed Tests | Failed Tests | Skipped Tests |
               |-------------|--------------|--------------|---------------|
-              | ${totalTests}      | ${totalPassed}       | ${totalFailed}       | ${totalSkipped}        |
+              | ${testCount}      | ${passedCount}       | ${failedCount}       | ${skippedCount}        |
             
               ### Details
             
-              - **Total tests run:** ${totalTests}
-              - **Tests passed:** ${totalPassed}
-              - **Tests failed:** ${totalFailed}
-              - **Tests skipped:** ${totalSkipped}
+              - **Total tests run:** ${testCount}
+              - **Tests passed:** ${passedCount}
+              - **Tests failed:** ${failedCount}
+              - **Tests skipped:** ${skippedCount}
             
               ### Failed Tests
             
               \`\`\`
-              $(grep -A 1 "Failed" test-results-*.txt)
+              ${'grep -A 1 "Failed" test-results.txt'}
               \`\`\`
             
               _This comment was automatically generated by a GitHub Action._

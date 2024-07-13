@@ -2,9 +2,5 @@
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\Julio\AppData\Local\JetBrains\Rider2024.1\resharper-host\temp\Rider\vAny\CoverageData\_Task-Manager.-355771651\Snapshot\snapshot.utdcvr</s:String>
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=68591541_002D20d1_002D48c7_002Db6f8_002De47278f16c78/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="when_method_does_not_throw_exception_if_hasError_is_false" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::49B2A784-23F1-45F7-A7B4-62AF8CFA1675::net8.0::Domain.tests.Validation.DomainExceptionValidationTest1&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::D72E6ACB-C361-4C09-A141-0F2CBB878820::net8.0::Application.tests.Filters.ResultsTest1&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::D72E6ACB-C361-4C09-A141-0F2CBB878820::net8.0::Application.tests.Mappings.DomainToDtoMappingProfileTest1&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -54,10 +54,10 @@ jobs:
       - name: Create test results summary
         id: create-summary
         run: |
-          test_count=$(grep -o 'Total tests: [0-9]*' test-results.txt | awk '{print $3}')
-          passed_count=$(grep -o 'Passed: [0-9]*' test-results.txt | awk '{print $2}')
-          failed_count=$(grep -o 'Failed: [0-9]*' test-results.txt | awk '{print $2}')
-          skipped_count=$(grep -o 'Skipped: [0-9]*' test-results.txt | awk '{print $2}')
+          test_count=$(grep -o 'Total tests: [0-9]*' test-results.txt | awk '{sum += $3} END {print sum}')
+          passed_count=$(grep -o 'Passed: [0-9]*' test-results.txt |  awk '{sum += $2} END {print sum}')
+          failed_count=$(grep -o 'Failed: [0-9]*' test-results.txt | awk '{sum += $2} END {print sum}')
+          skipped_count=$(grep -o 'Skipped: [0-9]*' test-results.txt | awk '{sum += $2} END {print sum}')
           echo test_count
           echo passed_count
           echo "::set-output name=test_count::$test_count"

@@ -8,7 +8,7 @@ public class TodoTask : Base {
     public string? Description { get; set; }
     public bool IsComplete { get; set; } = false;
     public int PercentageCompleted { get; set; } = 0;
-    public TodoTask( string name, int percentageCompleted, string? description) {
+    public TodoTask(string name, int percentageCompleted, string? description) {
         var newCode = Utils.RandomGenerator.RandomStringCode(6);
         ValidateDomain(name);
         Id = Utils.RandomGenerator.RandomStringCode(34);

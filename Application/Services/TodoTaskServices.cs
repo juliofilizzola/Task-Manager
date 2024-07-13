@@ -20,6 +20,9 @@ public class TodoTaskServices(ITodoTaskRepository todoTaskRepository, IMapper ma
     public async Task<Result<TodoTaskDto>> GetTodoTasksById(string? id) {
         try
         {
+            if (id is not { Length: > 0 }){
+                throw new NotFoundException("id not found");
+            }
             var t = await todoTaskRepository.GetTaskByIdAsync(id);
             var mapper1 = mapper.Map<TodoTaskDto>(t);
             return Result<TodoTaskDto>.SuccessResult(mapper1);

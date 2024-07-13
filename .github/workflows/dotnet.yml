@@ -48,7 +48,7 @@ jobs:
           total_failed=0
           total_skipped=0
 
-          for result in $(ls test-results-*.txt); do
+          for result in $(ls test-results); do
             test_count=$(grep -o 'Total tests: [0-9]*' $result | awk '{print $3}')
             passed_count=$(grep -o 'Passed: [0-9]*' $result | awk '{print $2}')
             failed_count=$(grep -o 'Failed: [0-9]*' $result | awk '{print $2}')

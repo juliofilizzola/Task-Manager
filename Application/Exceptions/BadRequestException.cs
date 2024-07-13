@@ -1,3 +1,3 @@
 ﻿namespace Application.Exceptions;
 
-public class BadRequestException(string message) : Exception(message);
+public abstract class BadRequestException(String message) : Exception(message);

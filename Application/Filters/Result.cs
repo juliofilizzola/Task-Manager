@@ -1,17 +1,17 @@
 ﻿namespace Application.Filters;
 
 public class Result<T> {
-    public bool Success { get; }
+    public Boolean Success { get; }
     public T? Value { get; }
-    public string? Error { get; }
+    public String? Error { get; }
 
-    private Result(T? value, bool success, string? error) {
+    private Result(T? value, Boolean success, String? error) {
         Value = value;
         Success = success;
         Error = error;
     }
 
     public static Result<T> SuccessResult(T value) => new Result<T>(value, true, null);
-    public static Result<T> ErrorResult(string error) => new Result<T>(default, false, error);
+    public static Result<T> ErrorResult(String error) => new Result<T>(default, false, error);
 
 }

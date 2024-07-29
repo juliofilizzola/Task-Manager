@@ -5,30 +5,27 @@ using Application.Interface;
 using AutoMapper;
 using Domain.Entity;
 using Domain.Interfaces;
+using Domain.Utils;
 using System.Globalization;
-using Random=Domain.Utils.Random;
 
 namespace Application.Services;
 
-public class TodoTaskServices : ITodoTaskServices {
-    private readonly ITodoTaskRepository _repo;
-    private readonly IMapper         _mapper;
-    public TodoTaskServices(ITodoTaskRepository todoTaskRepository, IMapper mapper) {
-        _repo = todoTaskRepository;
-        _mapper = mapper;
-    }
+public class TodoTaskServices(ITodoTaskRepository todoTaskRepository, IMapper mapper) : ITodoTaskServices {
 
     public async Task<Result<IEnumerable<TodoTaskDto>>> GetTodoTask() {
-        var t =await _repo.GetTasksAsync();
-        return Result<IEnumerable<TodoTaskDto>>.SuccessResult(_mapper.Map<IEnumerable<TodoTaskDto>>(t));
+        var t =await todoTaskRepository.GetTasksAsync();
+        return Result<IEnumerable<TodoTaskDto>>.SuccessResult(mapper.Map<IEnumerable<TodoTaskDto>>(t));
     }
 
     public async Task<Result<TodoTaskDto>> GetTodoTasksById(string? id) {
         try
         {
-            var t = await _repo.GetTaskByIdAsync(id);
-            var mapper = _mapper.Map<TodoTaskDto>(t);
-            return Result<TodoTaskDto>.SuccessResult(mapper);
+            if (id is not { Length: > 0 }){
+                throw new NotFoundException("id not found");
+            }
+            var t = await todoTaskRepository.GetTaskByIdAsync(id);
+            var mapper1 = mapper.Map<TodoTaskDto>(t);
+            return Result<TodoTaskDto>.SuccessResult(mapper1);
         }
         catch (Exception e)
         {
@@ -38,15 +35,15 @@ public class TodoTaskServices : ITodoTaskServices {
     }
 
     public async Task<Result<TodoTaskDto>> Add(TodoTaskDto todoTaskDto) {
-        var todoTask = _mapper.Map<TodoTask>(todoTaskDto);
+        var todoTask = mapper.Map<TodoTask>(todoTaskDto);
 
-        todoTask.Code = Random.RandomStringCode(6);
-        await _repo.CreateAsync(todoTask);
+        todoTask.Code = RandomGenerator.RandomStringCode(6);
+        await todoTaskRepository.CreateAsync(todoTask);
         return Result<TodoTaskDto>.SuccessResult(todoTaskDto);
     }
 
     public async Task<Result<TodoTaskDto>> Update(UpdateTodoTaskDto todoTaskDto, string id) {
-        var todo     = await _repo.GetTaskByIdAsync(id);
+        var todo     = await todoTaskRepository.GetTaskByIdAsync(id);
         if (todo == null){
             throw new Exception();
         }
@@ -59,12 +56,12 @@ public class TodoTaskServices : ITodoTaskServices {
         if (!String.IsNullOrEmpty(todoTaskDto.Name)){
             todo.Name = todoTaskDto.Name;
         }
-        await _repo.UpdateAsync(todo);
-        return Result<TodoTaskDto>.SuccessResult(_mapper.Map<TodoTaskDto>(await GetTodoTasksById(id)));
+        await todoTaskRepository.UpdateAsync(todo);
+        return Result<TodoTaskDto>.SuccessResult(mapper.Map<TodoTaskDto>(await GetTodoTasksById(id)));
     }
 
     public async Task<Result<TodoTaskDto>> UpdateProgress(string id, int? progress) {
-        var todo = await _repo.GetTaskByIdAsync(id);
+        var todo = await todoTaskRepository.GetTaskByIdAsync(id);
         if (todo == null){
             throw new CultureNotFoundException();
         }
@@ -78,31 +75,26 @@ public class TodoTaskServices : ITodoTaskServices {
 
         todo.PercentageCompleted = setValue;
 
-        if (setValue == 100){
-            todo.IsComplete = true;
-        }
-        else{
-            todo.IsComplete = false;
-        }
+        todo.IsComplete = setValue == 100;
 
-        await _repo.UpdateAsync(todo);
+        await todoTaskRepository.UpdateAsync(todo);
 
-        return Result<TodoTaskDto>.SuccessResult(_mapper.Map<TodoTaskDto>(await GetTodoTasksById(id)));
+        return Result<TodoTaskDto>.SuccessResult(mapper.Map<TodoTaskDto>(await GetTodoTasksById(id)));
     }
 
-    public async Task<Result<bool>> Remove(string? id) {
+    public async Task<Result<Boolean>> Remove(string? id) {
         if (String.IsNullOrEmpty(id)){
             throw new Exception();
         }
-        var todoTask = await _repo.GetTaskByIdAsync(id);
+        var todoTask = await todoTaskRepository.GetTaskByIdAsync(id);
         if (todoTask == null){
             throw new Exception();
         }
 
 
         try{
-            await _repo.RemoveAsync(todoTask);
-            return Result<bool>.SuccessResult(true);
+            await todoTaskRepository.RemoveAsync(todoTask);
+            return Result<Boolean>.SuccessResult(true);
         }
         catch (Exception e){
             Console.WriteLine(e);
